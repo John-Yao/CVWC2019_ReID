@@ -104,7 +104,7 @@ bash sh_tiget/wild_sub.sh
 
 | model description                                         | mAP(single_cam) | mAP(cross_cam) |
 | --------------------------------------------------------- | --------------- | -------------- |
-| pcb_6 pooling vertically(softmax loss)                    | 0.722           | 0.466          |
+| pcb_6 pooling vertically(softmax loss,not based the code) | 0.722           | 0.466          |
 | senext50+alltricks(softmax + batch hard mining triplet)   | 0.782           | 0.487          |
 | senext50+alltricks+multi-scale test+ reranking            | 0.841           | 0.524          |
 | senext50+alltricks+multi-scale test+ reranking+crop image | 0.835           | 0.519          |
