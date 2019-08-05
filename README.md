@@ -25,7 +25,7 @@ We build a ReID model base on global features and batch hard mining triplet loss
 
 ### Track4 briefly description: 
 
-The detection model is based on Cascade RCNN and coco finetune is used . The ReID model is trained with the same techique as Track3.
+We build the wild ReID model by combining dectection and plain ReID model directly. The detection model is based on Cascade RCNN and coco finetune is used . The ReID model is trained with the same techique as Track3. Specially, the results of dectections is filter by the 0.05 score threshold and nms is applied. Then the retrieval process is performanced on the filtered detected images.
 
 ### Installation
 
