@@ -1,0 +1,87 @@
+2019-08-05 10:29:57,268 reid_baseline INFO: Using 1 GPUS
+2019-08-05 10:29:57,268 reid_baseline INFO: Namespace(config_file='configs/tiger/softmax_triplet_with_center_fixaug.yml', opts=['MODEL.DEVICE_ID', "('0')", 'DATASETS.NAMES', "('tiger')", 'DATASETS.ROOT_DIR', "('../detections/work_dirs/crop_images/htc_reidtrain_e10_2200_1100/')", 'OUTPUT_DIR', "('../tiger/work_dirs/Experiment8-senext50-256x128-bs16x4-alltricks-triplet_center')", 'MODEL.NAME', "('se_resnext50')", 'MODEL.PRETRAIN_CHOICE', "('imagenet')", 'MODEL.PRETRAIN_PATH', "('../model_checkpoint_pytorch/se_resnext50_32x4d-a260b3a4.pth')", 'DATALOADER.NUM_INSTANCE', '(4)'])
+2019-08-05 10:29:57,268 reid_baseline INFO: Loaded configuration file configs/tiger/softmax_triplet_with_center_fixaug.yml
+2019-08-05 10:29:57,268 reid_baseline INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+  SAMPLER: softmax_triplet
+DATASETS:
+  NAMES: tiger
+  ROOT_DIR: ../detections/work_dirs/crop_images/htc_reidtrain_e10_2200_1100/
+FRAMEWORK: Baseline
+INPUT:
+  PADDING: 10
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  PROB: 0.0
+  RE_PROB: 0.5
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  BATCH_HARD: yes
+  COSINE_LOSS_MARGIN: 0.1
+  COSINE_LOSS_SCALE: 30.0
+  COSINE_LOSS_TYPE: CosFace
+  DEVICE: cuda
+  DEVICE_ID: 0
+  IF_LABELSMOOTH: on
+  IF_WITH_CENTER: yes
+  LAST_STRIDE: 1
+  METRIC_LOSS_TYPE: triplet_center
+  NAME: se_resnext50
+  NECK: bnneck
+  PCB_WITH_GLOBAL: no
+  PRETRAIN_CHOICE: imagenet
+  PRETRAIN_PATH: ../model_checkpoint_pytorch/se_resnext50_32x4d-a260b3a4.pth
+OUTPUT_DIR: ../tiger/work_dirs/Experiment8-senext50-256x128-bs16x4-alltricks-triplet_center
+SOLVER:
+  BASE_LR: 0.00035
+  BIAS_LR_FACTOR: 1
+  CENTER_LOSS_WEIGHT: 0.0005
+  CENTER_LR: 0.5
+  CHECKPOINT_PERIOD: 5
+  CLUSTER_MARGIN: 0.3
+  EVAL_PERIOD: 1
+  GAMMA: 0.1
+  IMS_PER_BATCH: 64
+  LOG_PERIOD: 5
+  MARGIN: 0.3
+  MAX_EPOCHS: 120
+  MOMENTUM: 0.9
+  MSML_LOSS_WEIGHT: 0.1
+  MSML_MARGIN: 0.1
+  OPTIMIZER_NAME: Adam
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_K: 2
+  RANGE_LOSS_WEIGHT: 1
+  RANGE_MARGIN: 0.3
+  STEPS: (40, 70)
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+TEST:
+  FEAT_NORM: yes
+  IMS_PER_BATCH: 128
+  NECK_FEAT: after
+  RE_RANKING: no
+  SELF_RETRIVAL: yes
+  WEIGHT: path
+2019-08-05 10:30:56,933 reid_baseline.train INFO: Start training
+2019-08-05 10:31:01,998 reid_baseline.train INFO: Using Retrival_R1_mAP!
+2019-08-05 10:31:36,690 reid_baseline.train INFO: Epoch[1] Iteration[5/23] Loss: 8.607, Acc: 0.001, Base Lr: 3.82e-05
+2019-08-05 10:31:38,357 reid_baseline.train INFO: Epoch[1] Iteration[10/23] Loss: 8.459, Acc: 0.009, Base Lr: 3.82e-05
+2019-08-05 10:31:39,974 reid_baseline.train INFO: Epoch[1] Iteration[15/23] Loss: 8.328, Acc: 0.018, Base Lr: 3.82e-05
+2019-08-05 10:31:41,596 reid_baseline.train INFO: Epoch[1] Iteration[20/23] Loss: 8.181, Acc: 0.031, Base Lr: 3.82e-05
+2019-08-05 10:31:42,657 reid_baseline.train INFO: Epoch 1 done. Time per batch: 40.477[s] Speed: 36.4[samples/s]
+2019-08-05 10:31:42,657 reid_baseline.train INFO: ----------
+2019-08-05 10:31:58,897 reid_baseline.train INFO: Validation Results - Epoch: 1
+2019-08-05 10:31:58,897 reid_baseline.train INFO: mAP: 83.4%
+2019-08-05 10:31:58,897 reid_baseline.train INFO: CMC curve, Rank-1  :100.0%
+2019-08-05 10:31:58,898 reid_baseline.train INFO: CMC curve, Rank-5  :100.0%
+2019-08-05 10:31:58,898 reid_baseline.train INFO: CMC curve, Rank-10 :100.0%
+2019-08-05 10:32:11,654 reid_baseline.train INFO: Epoch[2] Iteration[5/22] Loss: 6.897, Acc: 0.385, Base Lr: 7.28e-05
+2019-08-05 10:32:13,325 reid_baseline.train INFO: Epoch[2] Iteration[10/22] Loss: 6.820, Acc: 0.400, Base Lr: 7.28e-05
